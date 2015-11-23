@@ -4,6 +4,14 @@
 set +x
 
 
+
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+
+
+
+
 # Check if vim is installed
 if [[ ! -e $(which vim) ]]
 then
@@ -21,6 +29,8 @@ fi
 
 
 
+
+
 # Already existing configuration file ?
 if [[ -e ~/.vimrc ]]
 then
@@ -31,57 +41,39 @@ then
 		echo 'Aborting.'
 		exit 0
 	fi
-	echo '' > ~/.vimrc
 fi
-
-
-
-# Create a base configuration file
-echo -e '" Syntax highlighting' >> ~/.vimrc
-echo 'syntax on' >> ~/.vimrc
-
-echo -e '\n" Indentation' >> ~/.vimrc
-echo 'set autoindent' >> ~/.vimrc
-echo 'set tabstop=2' >> ~/.vimrc
-echo 'set shiftwidth=2' >> ~/.vimrc
-
-echo -e '\n" Highlight all search results' >> ~/.vimrc
-echo 'set hlsearch' >> ~/.vimrc
-
-echo -e '\n" Remove trailing whitespace character' >> ~/.vimrc
-echo 'autocmd BufWritePre * :%s/\s\+$//e' >> ~/.vimrc
-
-
-
 
 
 # Install pathogen
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
-# Pathogen conf
-echo -e '\n" Enable pathogen' >> ~/.vimrc
-echo 'execute pathogen#infect()' >> ~/.vimrc
-echo 'filetype plugin indent on' >> ~/.vimrc
-
-
-
-
-# Install ctrlp
-if [[ ! -d ~/.vim/bundle/ctrlp ]]
+if [[ ! -d ~/.vim/bundle ]]
 then
-	git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp
+	mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+		curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 fi
 
-# ctrlp conf
-echo -e '\n" ctrlp - do not change working directory' >> ~/.vimrc
-echo 'let g:ctrlp_working_path_mode = 0' >> ~/.vimrc
+
+
+# Installing all the plugins
+cpt=0
+for i in $(cat ${DIR}/pathogen_plugins.txt)
+do
+	if [[ $cpt -eq 0 ]]
+	then
+		name=$i
+		cpt=$(($cpt + 1))
+	else
+		url=$i
+		if [[ -d ~/.vim/bundle/${name} ]]
+		then
+			echo "${name} already exists in your ~/.vim/bundle directory. Skipping..."
+		else
+			git clone $url ~/.vim/bundle/${name}
+		fi
+		cpt=0
+	fi
+done
 
 
 
-
-# Install vim-javascript
-if [[ ! -d ~/.vim/bundle/vim-javascript ]]
-then
-	git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
-fi
+# Copy the vimrc file
+cp ${DIR}/vimrc ~/.vimrc
