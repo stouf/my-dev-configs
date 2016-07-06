@@ -75,5 +75,17 @@ done
 
 
 
+
+# Install the syntaxes
+mkdir -p ~/.vim/syntax
+while read -r line
+do
+	name=$(echo ${line} | cut -d ' ' -f 1)
+	url=$(echo ${line} | cut -d ' ' -f 2)
+	curl "${url}" -o ~/.vim/syntax/${name}.vim
+done < ${DIR}/syntaxes.txt
+
+
+
 # Copy the vimrc file
 cp ${DIR}/vimrc ~/.vimrc
