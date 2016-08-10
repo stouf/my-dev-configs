@@ -44,48 +44,16 @@ then
 fi
 
 
-# Install pathogen
-if [[ ! -d ~/.vim/bundle ]]
+# Install Vundle
+if [[ ! -d ~/.vim/bundle/Vundle.vim ]]
 then
-	mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-		curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
-
-
-
-# Installing all the plugins
-cpt=0
-for i in $(cat ${DIR}/pathogen_plugins.txt)
-do
-	if [[ $cpt -eq 0 ]]
-	then
-		name=$i
-		cpt=$(($cpt + 1))
-	else
-		url=$i
-		if [[ -d ~/.vim/bundle/${name} ]]
-		then
-			echo "${name} already exists in your ~/.vim/bundle directory. Skipping..."
-		else
-			git clone $url ~/.vim/bundle/${name}
-		fi
-		cpt=0
-	fi
-done
-
-
-
-
-# Install the syntaxes
-mkdir -p ~/.vim/syntax
-while read -r line
-do
-	name=$(echo ${line} | cut -d ' ' -f 1)
-	url=$(echo ${line} | cut -d ' ' -f 2)
-	curl "${url}" -o ~/.vim/syntax/${name}.vim
-done < ${DIR}/syntaxes.txt
-
 
 
 # Copy the vimrc file
 cp ${DIR}/vimrc ~/.vimrc
+
+
+# Installing all the plugins
+vim +PluginInstall +qall
