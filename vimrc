@@ -61,10 +61,13 @@ set hlsearch
 " Highlight TODO, FIXME, etc.. and trailing white space characters
 match Todo /\s\+$/
 
-" Auto-indentation
-set autoindent
+" Indent settings
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
+set expandtab
+set smarttab
+set autoindent
 
 " ctrlp related options
 let g:ctrlp_working_path_mode = 0
