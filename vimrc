@@ -74,3 +74,6 @@ let g:ctrlp_working_path_mode = 0
 
 " Enable the markdown syntax highlight for .md files
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
+" Underline current line
+set cursorline
