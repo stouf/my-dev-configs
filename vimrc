@@ -19,7 +19,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'pangloss/vim-javascript'
-
+Plugin 'danilo-augusto/vim-afterglow'
 
 
 " All of your Plugins must be added before the following line
@@ -46,6 +46,9 @@ filetype plugin indent on    " required
 
 " Show line numbers
 set number
+
+" Color scheme
+colorscheme afterglow
 
 " Enable syntax highlighting
 syntax on
