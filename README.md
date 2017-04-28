@@ -1,10 +1,4 @@
-My vim
-======
+# My Dev Cofnigurations
 
-
-Simple script doing the following:
-
-* Install [Vundle](https://github.com/VundleVim/Vundle.vim)
-* Install all the plugins listed in the [`vimrc`](vimrc) file through [Vundle](https://github.com/VundleVim/Vundle.vim)
-* Copy [`vimrc`](vimrc) to `~/.vimrc` (A confirmation is required if you already have a `~/.vimrc` file on your
-  filesystem.
+Nothing more than a bunch of configuration files and scripts to be able to replicate the same dev environment across
+different machines.
