@@ -64,6 +64,8 @@ set hlsearch
 
 " Highlight TODO, FIXME, etc.. and trailing white space characters
 match Todo /\s\+$/
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$/
 
 " Indent settings
 set tabstop=2
