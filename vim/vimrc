@@ -83,3 +83,5 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 " Underline current line
 set cursorline
+
+

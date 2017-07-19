@@ -1,0 +1,4 @@
+" [MAC OS Specific] Enable backspace key
+set backspace=indent,eol,start
+
+

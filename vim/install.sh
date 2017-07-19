@@ -57,3 +57,12 @@ cp ${DIR}/vimrc ~/.vimrc
 
 # Installing all the plugins
 vim +PluginInstall +qall
+
+
+# Mac OS specific
+echo 'Are you using Mac OS? [y/N]'
+read is_mac_os
+if [[ ${is_mac_os} = 'y' || ${is_mac_os} = 'Y' ]]
+then
+  cat ${DIR}/vimrc-macos >> ~/.vimrc
+fi
