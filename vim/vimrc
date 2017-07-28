@@ -21,6 +21,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'pangloss/vim-javascript'
 Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'flowtype/vim-flow'
+Plugin 'w0rp/ale'
 
 
 " All of your Plugins must be added before the following line
@@ -80,6 +82,20 @@ let g:ctrlp_working_path_mode = 0
 
 " Enable the markdown syntax highlight for .md files
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
+" vim-flow related configuration
+let g:flow#enable = 0
+"Use locally installed flow
+let local_flow = finddir('node_modules', '.;') . '/.bin/flow'
+if matchstr(local_flow, "^\/\\w") == ''
+    let local_flow= getcwd() . "/" . local_flow
+endif
+if executable(local_flow)
+  let g:flow#flowpath = local_flow
+endif
+
+" vim-ale related options
+let g:ale_lint_on_text_changed = 'never'
 
 " Underline current line
 set cursorline
