@@ -16,13 +16,13 @@ Plugin 'VundleVim/Vundle.vim'
 
 
 " Plugins
-Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'pangloss/vim-javascript'
 Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'flowtype/vim-flow'
 Plugin 'w0rp/ale'
+Plugin 'junegunn/fzf'
 
 
 " All of your Plugins must be added before the following line
@@ -77,9 +77,6 @@ set expandtab
 set smarttab
 set autoindent
 
-" ctrlp related options
-let g:ctrlp_working_path_mode = 0
-
 " Enable the markdown syntax highlight for .md files
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
@@ -96,6 +93,9 @@ endif
 
 " vim-ale related options
 let g:ale_lint_on_text_changed = 'never'
+
+" FZF
+map <c-p> :FZF<cr>
 
 " Underline current line
 set cursorline
