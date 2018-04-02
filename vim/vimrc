@@ -19,6 +19,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'pangloss/vim-javascript'
 Plugin 'danilo-augusto/vim-afterglow'
+Plugin 'github-theme'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'flowtype/vim-flow'
@@ -53,6 +54,8 @@ set number
 
 " Color scheme
 colorscheme afterglow
+" Clear theme
+" colorscheme github
 
 " Enable syntax highlighting
 syntax on
