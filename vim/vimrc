@@ -25,6 +25,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'flowtype/vim-flow'
 Plugin 'w0rp/ale'
 Plugin 'junegunn/fzf'
+Plugin 'prettier/vim-prettier'
 
 
 " All of your Plugins must be added before the following line
@@ -97,6 +98,13 @@ endif
 
 " vim-ale related options
 let g:ale_lint_on_text_changed = 'never'
+
+" Prettier
+map <leader>p :Prettier<cr>
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#trailing_comma = 'none'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#parser = 'babylon'
 
 " FZF
 map <c-p> :FZF<cr>
