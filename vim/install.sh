@@ -1,35 +1,8 @@
 #!/usr/bin/env bash
 
-
 set +x
 
-
-
-
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-
-
-
-
-# Check if vim is installed
-if [[ ! -e $(which vim) ]]
-then
-	echo 'vim seems not to be installed on your system'
-	exit 1
-fi
-
-# Check if git is installed
-if [[ ! -e $(which git) ]]
-then
-	echo 'git seems not to be installed on your system'
-	exit 1
-fi
-
-
-
-
-
 
 # Already existing configuration file ?
 if [[ -e ~/.vimrc ]]
@@ -43,6 +16,14 @@ then
 	fi
 fi
 
+# Platform detection
+platform='linux'
+echo 'Are you using Mac OS? [y/N]'
+read is_mac_os
+if [[ ${is_mac_os} = 'y' || ${is_mac_os} = 'Y' ]]
+then
+  platform='mac'
+fi
 
 # Install Vundle
 if [[ ! -d ~/.vim/bundle/Vundle.vim ]]
@@ -50,19 +31,30 @@ then
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
-
 # Copy the vimrc file
 cp ${DIR}/vimrc ~/.vimrc
-
 
 # Installing all the plugins
 vim +PluginInstall +qall
 
+# Install the dependencies of some plugins
+sudo npm install -g flow-language-server ocaml-language-server
+reason_cli_package_name='reason-cli@3.1.0-linux'
+if [[ ${platform} = 'mac' ]]
+then
+  reason_cli_package_name='reason-cli@3.1.0-darwin'
+fi
+# See https://github.com/reasonml/reasonml.github.io/pull/157 for more details about why the --unsafe-perm tag is
+# required
+sudo npm install -g --unsafe-perm ${reason_cli_package_name}
+
+# The plugin LanguageClient-neovim requires some post installation operations
+cd ~/.vim/bundle/LanguageClient-neovim/ && git checkout next && bash ./install.sh
 
 # Mac OS specific
-echo 'Are you using Mac OS? [y/N]'
-read is_mac_os
-if [[ ${is_mac_os} = 'y' || ${is_mac_os} = 'Y' ]]
+if [[ ${platform} = 'mac' ]]
 then
   cat ${DIR}/vimrc-macos >> ~/.vimrc
 fi
+
+echo "Please do not forget to install fzf (https://github.com/junegunn/fzf) if you haven't already done it"
