@@ -38,7 +38,7 @@ cp ${DIR}/vimrc ~/.vimrc
 vim +PluginInstall +qall
 
 # Install the dependencies of some plugins
-sudo npm install -g flow-language-server ocaml-language-server
+sudo npm install -g flow-language-server ocaml-language-server prettier
 reason_cli_package_name='reason-cli@3.1.0-linux'
 if [[ ${platform} = 'mac' ]]
 then
