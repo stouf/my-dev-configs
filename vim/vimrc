@@ -33,6 +33,12 @@ Plugin 'reasonml-editor/vim-reason-plus'
 " running the script install.sh
 Plugin 'autozimu/LanguageClient-neovim'
 
+" This plugin needs some post-operations that Vundle apparently can't run
+" See https://github.com/fatih/vim-go
+" At the time of this writting, it's about running the script :GoUpdateBinaries
+" in Vim
+Plugin 'fatih/vim-go'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -104,8 +110,10 @@ let g:LanguageClient_autoStart = 1
 " Need to install the following language server:
 " - https://github.com/flowtype/flow-language-server
 " - https://github.com/freebroccolo/ocaml-language-server
+" - https://github.com/sourcegraph/go-langserver
 let g:LanguageClient_serverCommands = {
     \ 'javascript': ['flow-language-server', '--stdio'],
+    \ 'go': ['~/development/go/bin/go-langserver'],
     \ 'reason': [ 'ocaml-language-server', '--stdio' ],
     \ 'ocaml': [ 'ocaml-language-server', '--stdio' ]
     \ }
@@ -132,6 +140,7 @@ let g:syntastic_check_on_wq = 0
 " This requires eslint to be installed on the system
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'npx eslint'
+let g:syntastic_go_checkers = ['go', 'gofmt']
 
 set foldmethod=syntax
 autocmd BufWinEnter * silent! :%foldopen!
