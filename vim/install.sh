@@ -39,7 +39,7 @@ vim +PluginInstall +qall
 
 # Install the dependencies of some plugins
 sudo npm install -g flow-language-server ocaml-language-server prettier
-go get -u github.com/sourcegraph/go-langserver github.com/zmb3/gogetdoc
+go get -u github.com/zmb3/gogetdoc
 reason_cli_package_name='reason-cli@3.1.0-linux'
 if [[ ${platform} = 'mac' ]]
 then
