@@ -80,6 +80,9 @@ set colorcolumn=120
 " Highlight all search results
 set hlsearch
 
+set ignorecase
+set smartcase
+
 " Highlight TODO, FIXME, etc.. and trailing white space characters
 match Todo /\s\+$/
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
