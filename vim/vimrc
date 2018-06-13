@@ -79,6 +79,8 @@ set colorcolumn=120
 
 " Highlight all search results
 set hlsearch
+" Highlight as you type
+set incsearch
 
 set ignorecase
 set smartcase
