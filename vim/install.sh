@@ -49,7 +49,7 @@ fi
 # required
 sudo npm install -g --unsafe-perm ${reason_cli_package_name}
 
-# The plugin LanguageClient-neovim requires some post installation operations
+# Some plugins require some post installation operations
 cd ~/.vim/bundle/LanguageClient-neovim/ && git checkout next && bash ./install.sh
 vim +GoUpdateBinaries +qall
 
