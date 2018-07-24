@@ -26,6 +26,7 @@ Plugin 'junegunn/fzf'
 Plugin 'prettier/vim-prettier'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'reasonml-editor/vim-reason-plus'
+Plugin 'scrooloose/nerdtree'
 
 " This plugin needs some post-operations that Vundle apparently can't run
 " See https://github.com/autozimu/LanguageClient-neovim
