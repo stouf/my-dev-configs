@@ -5,7 +5,9 @@ vim +PluginUpdate +qall
 REASON_CLI_VERSION="3.2.0"
 
 # Update the dependencies of some plugins
-sudo npm update -g flow-language-server ocaml-language-server prettier
+sudo npm install -g \
+  flow-language-server@latest \
+  ocaml-language-server prettier@latest
 go get -u github.com/zmb3/gogetdoc
 reason_cli_package_name="reason-cli@${REASON_CLI_VERSION}-linux"
 if [[ ${platform} = 'mac' ]]
