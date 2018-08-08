@@ -2,7 +2,7 @@
 
 vim +PluginUpdate +qall
 
-REASON_CLI_VERSION="3.2.0"
+REASON_CLI_VERSION="3.3.2"
 
 # Update the dependencies of some plugins
 sudo npm install -g \
