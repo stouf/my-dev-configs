@@ -8,6 +8,7 @@ Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript'
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'albertorestifo/github.vim'
+Plug 'altercation/vim-colors-solarized'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf'
@@ -30,6 +31,8 @@ set number
 " Color scheme
 colorscheme afterglow
 " colorscheme github
+" set background=dark
+" colorscheme solarized
 
 " Enable syntax highlighting
 syntax on
