@@ -47,7 +47,7 @@ then
 fi
 # See https://github.com/reasonml/reasonml.github.io/pull/157 for more details about why the --unsafe-perm tag is
 # required
-sudo npm install -g --unsafe-perm ${reason_cli_package_name}
+sudo npm install -g --unsafe-perm ${reason_cli_package_name} bs-platform@latest
 
 # Mac OS specific
 if [[ ${platform} = 'mac' ]]
