@@ -4,8 +4,6 @@ set +x
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-REASON_CLI_VERSION="3.3.2"
-
 # Already existing configuration file ?
 if [[ -e ~/.vimrc ]]
 then
@@ -40,10 +38,10 @@ vim +PlugInstall +qall
 # Install the dependencies of some plugins
 sudo npm install -g flow-language-server ocaml-language-server prettier
 go get -u github.com/zmb3/gogetdoc
-reason_cli_package_name="reason-cli@${REASON_CLI_VERSION}-linux"
+reason_cli_package_name="reason-cli@$latest-linux"
 if [[ ${platform} = 'mac' ]]
 then
-  reason_cli_package_name="reason-cli@${REASON_CLI_VERSION}-darwin"
+  reason_cli_package_name="reason-cli@latest-darwin"
 fi
 # See https://github.com/reasonml/reasonml.github.io/pull/157 for more details about why the --unsafe-perm tag is
 # required
