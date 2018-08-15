@@ -27,17 +27,15 @@ then
   platform='mac'
 fi
 
-# Install Vundle
-if [[ ! -d ~/.vim/bundle/Vundle.vim ]]
-then
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
+# Install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Copy the vimrc file
 cp ${DIR}/vimrc ~/.vimrc
 
 # Installing all the plugins
-vim +PluginInstall +qall
+vim +PlugInstall +qall
 
 # Install the dependencies of some plugins
 sudo npm install -g flow-language-server ocaml-language-server prettier
@@ -50,10 +48,6 @@ fi
 # See https://github.com/reasonml/reasonml.github.io/pull/157 for more details about why the --unsafe-perm tag is
 # required
 sudo npm install -g --unsafe-perm ${reason_cli_package_name}
-
-# Some plugins require some post installation operations
-cd ~/.vim/bundle/LanguageClient-neovim/ && git checkout next && bash ./install.sh
-vim +GoUpdateBinaries +qall
 
 # Mac OS specific
 if [[ ${platform} = 'mac' ]]

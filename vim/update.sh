@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-vim +PluginUpdate +qall
+vim +PlugUpdate +qall
 
 REASON_CLI_VERSION="3.3.2"
 
@@ -17,11 +17,3 @@ fi
 # See https://github.com/reasonml/reasonml.github.io/pull/157 for more details about why the --unsafe-perm tag is
 # required
 sudo npm install -g --unsafe-perm ${reason_cli_package_name} bs-platform@latest
-
-# Post-update operations
-cd ~/.vim/bundle/LanguageClient-neovim/ && \
-  git fetch origin && \
-  git checkout next && \
-  git reset --hard origin/next && \
-  bash ./install.sh
-vim +GoUpdateBinaries +qall
