@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript'
 Plug 'danilo-augusto/vim-afterglow'
-Plug 'vim-scripts/github-theme'
+Plug 'albertorestifo/github.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf'
