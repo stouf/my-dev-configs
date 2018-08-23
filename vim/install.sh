@@ -3,6 +3,7 @@
 set +x
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+LANG_SERVER_DIR="~/.language-servers"
 
 # Already existing configuration file ?
 if [[ -e ~/.vimrc ]]
@@ -36,8 +37,11 @@ cp ${DIR}/vimrc ~/.vimrc
 vim +PlugInstall +qall
 
 # Install the dependencies of some plugins
-sudo npm install -g flow-language-server ocaml-language-server prettier
+sudo npm install -g flow-language-server prettier
 go get -u github.com/zmb3/gogetdoc
+mkdir -p ${LANG_SERVER_DIR}/reasonml && \
+  wget https://github.com/jaredly/reason-language-server/releases/download/1.0.2/bin.native.linux -O ${LANG_SERVER_DIR}/reasonml/bin.native.linux && \
+  chmod +x ${LANG_SERVER_DIR}/reasonml/bin.native.linux
 # See https://github.com/reasonml/reasonml.github.io/pull/157 for more details about why the --unsafe-perm tag is
 # required
 sudo npm install -g --unsafe-perm reason-cli@latest-linux bs-platform@latest
