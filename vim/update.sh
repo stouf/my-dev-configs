@@ -7,11 +7,6 @@ sudo npm install -g \
   flow-language-server@latest \
   ocaml-language-server prettier@latest
 go get -u github.com/zmb3/gogetdoc
-reason_cli_package_name="reason-cli@latest-linux"
-if [[ ${platform} = 'mac' ]]
-then
-  reason_cli_package_name="reason-cli@latest-darwin"
-fi
 # See https://github.com/reasonml/reasonml.github.io/pull/157 for more details about why the --unsafe-perm tag is
 # required
-sudo npm install -g --unsafe-perm ${reason_cli_package_name} bs-platform@latest
+sudo npm install -g --unsafe-perm reason-cli@latest-linux bs-platform@latest

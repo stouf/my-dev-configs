@@ -38,19 +38,8 @@ vim +PlugInstall +qall
 # Install the dependencies of some plugins
 sudo npm install -g flow-language-server ocaml-language-server prettier
 go get -u github.com/zmb3/gogetdoc
-reason_cli_package_name="reason-cli@latest-linux"
-if [[ ${platform} = 'mac' ]]
-then
-  reason_cli_package_name="reason-cli@latest-darwin"
-fi
 # See https://github.com/reasonml/reasonml.github.io/pull/157 for more details about why the --unsafe-perm tag is
 # required
-sudo npm install -g --unsafe-perm ${reason_cli_package_name} bs-platform@latest
-
-# Mac OS specific
-if [[ ${platform} = 'mac' ]]
-then
-  cat ${DIR}/vimrc-macos >> ~/.vimrc
-fi
+sudo npm install -g --unsafe-perm reason-cli@latest-linux bs-platform@latest
 
 echo "Please do not forget to install fzf (https://github.com/junegunn/fzf) if you haven't already done it"
