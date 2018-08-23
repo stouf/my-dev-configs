@@ -29,10 +29,10 @@ call plug#end()
 set number
 
 " Color scheme
-colorscheme afterglow
+" colorscheme afterglow
 " colorscheme github
-" set background=dark
-" colorscheme solarized
+set background=dark
+colorscheme solarized
 
 " Enable syntax highlighting
 syntax on
