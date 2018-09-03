@@ -82,7 +82,7 @@ let g:LanguageClient_autoStart = 1
 " - https://github.com/freebroccolo/ocaml-language-server
 let g:LanguageClient_serverCommands = {
     \ 'javascript': ['flow-language-server', '--stdio'],
-    \ 'reason': ['~/.language-servers/reasonml/bin.native.linux']
+    \ 'reason': ['~/.language-servers/node_modules/.bin/ocaml-language-server', '--stdio']
     \ }
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
