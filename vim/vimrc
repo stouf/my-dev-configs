@@ -77,8 +77,7 @@ let g:prettier#config#parser = 'babylon'
 set hidden
 set completefunc=LanguageClient#complete
 let g:LanguageClient_autoStart = 1
-" Need to install the following language server:
-" - https://github.com/flowtype/flow-language-server
+" Need to install the following language servers:
 " - https://github.com/freebroccolo/ocaml-language-server
 let g:LanguageClient_serverCommands = {
     \ 'javascript': ['flow-language-server', '--stdio'],
