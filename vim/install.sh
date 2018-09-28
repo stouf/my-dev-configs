@@ -3,7 +3,6 @@
 set +x
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-LANG_SERVER_DIR="~/.language-servers"
 NPM_TOOLS_DIR="~/.my-npm-tools"
 
 # Already existing configuration file ?
@@ -39,7 +38,7 @@ vim +PlugInstall +qall
 
 # Install the dependencies of some plugins
 npm install --prefix ${NPM_TOOLS_DIR} prettier
-npm install --prefix ${LANG_SERVER_DIR} \
+npm install --prefix ${NPM_TOOLS_DIR} \
   ocaml-language-server flow-language-server
 go get -u github.com/zmb3/gogetdoc
 # See https://github.com/reasonml/reasonml.github.io/pull/157 for more details about why the --unsafe-perm tag is

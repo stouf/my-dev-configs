@@ -81,8 +81,8 @@ let g:LanguageClient_autoStart = 1
 " Need to install the following language servers:
 " - https://github.com/freebroccolo/ocaml-language-server
 let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['~/.language-servers/node_modules/.bin/flow-language-server', '--stdio'],
-    \ 'reason': ['~/.language-servers/node_modules/.bin/ocaml-language-server', '--stdio']
+    \ 'javascript': ['~/.my-npm-tools/node_modules/.bin/flow-language-server', '--stdio'],
+    \ 'reason': ['~/.my-npm-tools/node_modules/.bin/ocaml-language-server', '--stdio']
     \ }
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
