@@ -4,6 +4,7 @@ set +x
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 LANG_SERVER_DIR="~/.language-servers"
+NPM_TOOLS_DIR="~/.my-npm-tools"
 
 # Already existing configuration file ?
 if [[ -e ~/.vimrc ]]
@@ -37,7 +38,7 @@ cp ${DIR}/vimrc ~/.vimrc
 vim +PlugInstall +qall
 
 # Install the dependencies of some plugins
-sudo npm install -g prettier
+npm install --prefix ${NPM_TOOLS_DIR} prettier
 npm install --prefix ${LANG_SERVER_DIR} \
   ocaml-language-server flow-language-server
 go get -u github.com/zmb3/gogetdoc

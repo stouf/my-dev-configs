@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
 LANG_SERVER_DIR="~/.language-servers"
+NPM_TOOLS_DIR="~/.my-npm-tools"
 
 vim +PlugUpdate +qall
 
 # Update the dependencies of some plugins
-sudo npm install -g prettier@latest
+npm install --prefix ${NPM_TOOLS_DIR} prettier@latest
 npm install --prefix ${LANG_SERVER_DIR} \
   ocaml-language-server@latest flow-language-server@latest
 go get -u github.com/zmb3/gogetdoc
