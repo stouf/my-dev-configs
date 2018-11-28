@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -e
+set -u
+
 NPM_TOOLS_DIR="~/.my-npm-tools"
 
 vim +PlugUpdate +qall

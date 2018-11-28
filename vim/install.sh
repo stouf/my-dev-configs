@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-set +x
+set -e
+set -u
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 NPM_TOOLS_DIR="~/.my-npm-tools"
