@@ -17,15 +17,6 @@ then
 	fi
 fi
 
-# Platform detection
-platform='linux'
-echo 'Are you using Mac OS? [y/N]'
-read is_mac_os
-if [[ ${is_mac_os} = 'y' || ${is_mac_os} = 'Y' ]]
-then
-  platform='mac'
-fi
-
 # Install vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
