@@ -82,7 +82,7 @@ let g:LanguageClient_autoStart = 1
 " - https://github.com/freebroccolo/ocaml-language-server
 let g:LanguageClient_serverCommands = {
   \ 'javascript': ['~/.my-npm-tools/node_modules/.bin/flow-language-server', '--stdio', '--try-flow-bin'],
-  \ 'reason': ['~/.my-npm-tools/node_modules/.bin/ocaml-language-server', '--stdio']
+  \ 'reason': ['~/.my-language-servers/reason-language-server.exe']
   \ }
 let g:LanguageClient_rootMarkers = {
   \ 'javascript': ['.flowconfig']
