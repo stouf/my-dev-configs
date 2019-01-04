@@ -72,7 +72,7 @@ let g:prettier#config#single_quote = 'true'
 let g:prettier#config#trailing_comma = 'none'
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#parser = 'babylon'
-let g:prettier#exec_cmd_path = "~/.my-npm-tools/node_modules/.bin/prettier"
+let g:prettier#exec_cmd_path = "prettier"
 
 " LanguageClient
 set hidden
@@ -81,8 +81,8 @@ let g:LanguageClient_autoStart = 1
 " Need to install the following language servers:
 " - https://github.com/freebroccolo/ocaml-language-server
 let g:LanguageClient_serverCommands = {
-  \ 'javascript': ['~/.my-npm-tools/node_modules/.bin/flow-language-server', '--stdio', '--try-flow-bin'],
-  \ 'reason': ['~/.my-language-servers/reason-language-server.exe']
+  \ 'javascript': ['flow-language-server', '--stdio', '--try-flow-bin'],
+  \ 'reason': ['reason-language-server.exe']
   \ }
 let g:LanguageClient_rootMarkers = {
   \ 'javascript': ['.flowconfig']
