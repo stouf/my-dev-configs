@@ -15,7 +15,6 @@ Plug 'junegunn/fzf'
 Plug 'prettier/vim-prettier'
 Plug 'vim-syntastic/syntastic'
 Plug 'reasonml-editor/vim-reason-plus'
-Plug 'scrooloose/nerdtree'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
