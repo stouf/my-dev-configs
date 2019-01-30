@@ -85,7 +85,3 @@ source $ZSH/oh-my-zsh.sh
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-
-# Go
-export GOPATH=${HOME}/development/go
-export PATH="${GOPATH}/bin:${PATH}"
