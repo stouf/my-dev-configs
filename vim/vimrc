@@ -112,3 +112,4 @@ let g:syntastic_javascript_eslint_exe = 'npx eslint'
 
 " hindent
 let g:hindent_command = "stack exec -- hindent"
+let g:hindent_on_save = 0
