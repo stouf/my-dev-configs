@@ -19,7 +19,6 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-Plug 'alx741/vim-hindent'
 
 " Initialize plugin system
 call plug#end()
@@ -109,7 +108,3 @@ let g:syntastic_check_on_wq = 0
 " This requires eslint to be installed on the system
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'npx eslint'
-
-" hindent
-let g:hindent_command = "stack exec -- hindent"
-let g:hindent_on_save = 0
