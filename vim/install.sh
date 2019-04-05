@@ -27,16 +27,7 @@ cp ${DIR}/vimrc ~/.vimrc
 # Copy the Language-client configuration file
 cp ${DIR}/language-client-settings.json ${HOME}/.vim/settings.json
 
-# Install floskell
-current_dir=$(pwd)
-cd /tmp && \
-  git clone https://github.com/ennocramer/floskell && \
-  cd floskell && \
-  stack install && \
-  cd ${current_dir} && \
-  rm -rf /tmp/floskell
-
 cp -r ${DIR}/ftplugin ~/.vim
 
-# Installing all the plugins
+# Install all the plugins
 vim +PlugInstall +qall
