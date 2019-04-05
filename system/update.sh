@@ -8,7 +8,7 @@ function install-reason-language-server {
   dldst="${dldir}/linux.zip"
   mkdir ${dldir}
   wget \
-    https://github.com/jaredly/reason-language-server/releases/download/1.4.0/linux.zip \
+    https://github.com/jaredly/reason-language-server/releases/download/1.5.2/linux.zip \
     -O ${dldst}
   unzip ${dldst} -d ${dldir}
   sudo mv ${dldir}/reason-language-server/reason-language-server.exe /usr/local/bin/
