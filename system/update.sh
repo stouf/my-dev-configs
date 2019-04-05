@@ -23,7 +23,6 @@ sudo npm install --unsafe-perm -g ocaml-language-server@latest \
 sudo npm install -g prettier@latest
 
 install-reason-language-server
-go get -u github.com/zmb3/gogetdoc
 sudo pacman -S fzf
 
 rm ~/.local/bin/hindent && stack install hindent
