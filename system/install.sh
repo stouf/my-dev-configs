@@ -38,3 +38,4 @@ install-reason-language-server
 sudo pacman -S fzf
 
 install-flowskell
+stack install hdevtools
