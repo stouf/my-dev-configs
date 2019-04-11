@@ -61,6 +61,12 @@ set expandtab
 set smarttab
 set autoindent
 
+" File Explorer - tree view
+let g:netrw_liststyle = 3
+
+" Underline current line
+set cursorline
+
 " Enable the markdown syntax highlight for .md files
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
@@ -93,9 +99,6 @@ nnoremap <silent> <C-f> :call LanguageClient#textDocument_references()<CR>
 
 " FZF
 map <c-p> :FZF<cr>
-
-" Underline current line
-set cursorline
 
 " Syntastic
 set statusline+=%#warningmsg#
