@@ -3,6 +3,8 @@
 set -e
 set -u
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 function install-reason-language-server {
   dldir="/tmp/reason-language-server"
   dldst="${dldir}/linux.zip"
