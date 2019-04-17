@@ -38,6 +38,7 @@ sudo pacman -S fzf
 
 rm -f ~/.local/bin/flowskell
 install-flowskell
-
 rm -f ~/.local/bin/hdevtools
 stack install hdevtools
+rm -f ~/.local/bin/hfmt
+stack install hfmt

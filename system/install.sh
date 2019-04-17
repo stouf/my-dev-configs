@@ -39,3 +39,4 @@ sudo pacman -S fzf
 
 install-flowskell
 stack install hdevtools
+stack install hfmt
