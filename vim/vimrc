@@ -12,12 +12,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf'
 Plug 'prettier/vim-prettier'
 Plug 'reasonml-editor/vim-reason-plus'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 Plug 'scrooloose/nerdtree'
 Plug 'bitc/vim-hdevtools'
+Plug 'w0rp/ale'
 
 " Initialize plugin system
 call plug#end()
@@ -76,24 +73,12 @@ let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#parser = 'babylon'
 let g:prettier#exec_cmd_path = "prettier"
 
-" LanguageClient
-set hidden
-set completefunc=LanguageClient#complete
-let g:LanguageClient_autoStart = 1
-" Need to install the following language servers:
-" - https://github.com/freebroccolo/ocaml-language-server
-let g:LanguageClient_serverCommands = {
-  \ 'javascript': ['flow-language-server', '--stdio', '--try-flow-bin'],
-  \ 'reason': ['ocaml-language-server', '--stdio']
-  \ }
-let g:LanguageClient_rootMarkers = {
-  \ 'javascript': ['.flowconfig']
-  \ }
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<cr>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-nnoremap <silent> <C-f> :call LanguageClient#textDocument_references()<CR>
+" Ale
+let g:ale_completion_enabled = 1
+nnoremap <silent> gd :ALEGoToDefinition<CR>
+nnoremap <silent> K ::ALEHover<CR>
+nnoremap <silent> <C-f> :ALEFindReferences<CR>
+nnoremap <silent> gf :ALEFix<CR>
 
 " FZF
 map <c-p> :FZF<cr>
