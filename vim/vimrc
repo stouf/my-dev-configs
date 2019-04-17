@@ -17,6 +17,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 Plug 'scrooloose/nerdtree'
+Plug 'bitc/vim-hdevtools'
 
 " Initialize plugin system
 call plug#end()
@@ -96,3 +97,9 @@ nnoremap <silent> <C-f> :call LanguageClient#textDocument_references()<CR>
 
 " FZF
 map <c-p> :FZF<cr>
+
+" hdevtools
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsInfo<CR>
+au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsClear<CR>
+let g:hdevtools_stack = 1
