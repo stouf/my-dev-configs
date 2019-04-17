@@ -13,7 +13,6 @@ Plug 'junegunn/fzf'
 Plug 'prettier/vim-prettier'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'scrooloose/nerdtree'
-Plug 'bitc/vim-hdevtools'
 Plug 'w0rp/ale'
 
 " Initialize plugin system
@@ -82,9 +81,3 @@ nnoremap <silent> gf :ALEFix<CR>
 
 " FZF
 map <c-p> :FZF<cr>
-
-" hdevtools
-au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsInfo<CR>
-au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsClear<CR>
-let g:hdevtools_stack = 1
