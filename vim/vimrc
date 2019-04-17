@@ -17,6 +17,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+Plug 'scrooloose/nerdtree'
 
 " Initialize plugin system
 call plug#end()
