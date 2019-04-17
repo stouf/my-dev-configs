@@ -17,15 +17,6 @@ function install-reason-language-server {
   rm -r ${dldir}
 }
 
-function install-flowskell {
-  dldir="/tmp/flowskell"
-  git clone https://github.com/ennocramer/floskell ${dldir}
-  cd ${dldir}
-  stack install
-  cd ${DIR}
-  rm -rf ${dldir}
-}
-
 # NPM packages
 # See https://github.com/reasonml/reasonml.github.io/pull/157 for more details about why the --unsafe-perm tag is
 # required
@@ -36,8 +27,6 @@ sudo npm install -g prettier@latest
 install-reason-language-server
 sudo pacman -S fzf
 
-rm -f ~/.local/bin/flowskell
-install-flowskell
 rm -f ~/.local/bin/hdevtools
 stack install hdevtools
 rm -f ~/.local/bin/hfmt
