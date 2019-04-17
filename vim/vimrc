@@ -11,7 +11,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf'
 Plug 'prettier/vim-prettier'
-Plug 'vim-syntastic/syntastic'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -97,15 +96,3 @@ nnoremap <silent> <C-f> :call LanguageClient#textDocument_references()<CR>
 
 " FZF
 map <c-p> :FZF<cr>
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" This requires eslint to be installed on the system
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'npx eslint'
