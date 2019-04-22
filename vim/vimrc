@@ -73,7 +73,6 @@ let g:prettier#config#parser = 'babylon'
 let g:prettier#exec_cmd_path = "prettier"
 
 " Ale
-let g:ale_completion_enabled = 1
 nnoremap <silent> gd :ALEGoToDefinition<CR>
 nnoremap <silent> K ::ALEHover<CR>
 nnoremap <silent> <C-f> :ALEFindReferences<CR>
