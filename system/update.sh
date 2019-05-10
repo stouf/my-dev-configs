@@ -36,6 +36,7 @@ function update-haskell-ide-engine {
 }
 
 # NPM packages
+sudo npm config -g set prefix /usr/local
 # See https://github.com/reasonml/reasonml.github.io/pull/157 for more details about why the --unsafe-perm tag is
 # required
 sudo npm install --unsafe-perm -g ocaml-language-server@latest \
