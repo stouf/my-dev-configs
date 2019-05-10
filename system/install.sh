@@ -17,6 +17,19 @@ function install-reason-language-server {
   rm -r ${dldir}
 }
 
+# It seems necessary NOT TO remove the repository for this langauge server to
+# work property
+function install-haskell-ide-engine {
+  install_dir=~/.local/src
+  mkdir -p ${install_dir}
+  cd ${install_dir}
+  git clone https://github.com/haskell/haskell-ide-engine --recurse-submodules
+  cd haskell-ide-engine
+  stack ./install.hs hie-8.6.4
+  stack ./install.hs hie-8.6.5
+  stack ./install.hs build-doc
+}
+
 # NPM packages
 sudo npm config -g set /usr/local
 # See https://github.com/reasonml/reasonml.github.io/pull/157 for more details about why the --unsafe-perm tag is
@@ -28,5 +41,4 @@ sudo npm install -g prettier
 install-reason-language-server
 sudo pacman -S fzf
 
-stack install hdevtools
-stack install hfmt
+install-haskell-ide-engine
