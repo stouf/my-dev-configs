@@ -77,6 +77,8 @@ nnoremap <silent> gd :ALEGoToDefinition<CR>
 nnoremap <silent> K ::ALEHover<CR>
 nnoremap <silent> <C-f> :ALEFindReferences<CR>
 nnoremap <silent> gf :ALEFix<CR>
+inoremap <silent> <C-x><C-p> <C-\><C-O>:ALEComplete<CR>
+let g:ale_completion_enabled = 0
 let g:ale_haskell_hie_executable = 'hie-wrapper'
 
 " FZF
