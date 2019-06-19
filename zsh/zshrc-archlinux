@@ -88,3 +88,7 @@ source /usr/share/fzf/completion.zsh
 
 # Haskell Stack directory
 export PATH="${HOME}/.local/bin:$PATH"
+
+# Go related
+export GOPATH=${HOME}/development/go
+export PATH="${GOPATH}/bin:${PATH}"

@@ -47,3 +47,5 @@ install-reason-language-server
 sudo pacman -S fzf
 
 update-haskell-ide-engine
+
+go get -u golang.org/x/tools/cmd/gopls
