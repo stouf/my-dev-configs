@@ -16,7 +16,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf'
-Plug 'prettier/vim-prettier'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
@@ -70,14 +69,6 @@ set cursorline
 
 " Enable the markdown syntax highlight for .md files
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
-
-" Prettier
-map <leader>p :Prettier<cr>
-let g:prettier#config#single_quote = 'true'
-let g:prettier#config#trailing_comma = 'none'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#parser = 'babylon'
-let g:prettier#exec_cmd_path = "prettier"
 
 " Ale
 nnoremap <silent> gd :ALEGoToDefinition<CR>
