@@ -76,7 +76,6 @@ nnoremap <silent> K ::ALEHover<CR>
 nnoremap <silent> <C-f> :ALEFindReferences<CR>
 nnoremap <silent> gf :ALEFix<CR>
 set omnifunc=ale#completion#OmniFunc
-let g:ale_haskell_hie_executable = 'hie-wrapper'
 
 " FZF
 map <c-p> :FZF<cr>

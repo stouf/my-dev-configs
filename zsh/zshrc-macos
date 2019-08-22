@@ -92,9 +92,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Haskell Stack directory
-export PATH="${HOME}/.local/bin:$PATH"
-
 # Go related
 export GOPATH=${HOME}/development/go
 export PATH="${GOPATH}/bin:${PATH}"
