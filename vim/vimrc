@@ -18,8 +18,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'scrooloose/nerdtree'
-Plug 'w0rp/ale'
 Plug 'ayu-theme/ayu-vim'
+Plug 'dense-analysis/ale'
 
 " Initialize plugin system
 call plug#end()
