@@ -20,6 +20,7 @@ Plug 'reasonml-editor/vim-reason-plus'
 Plug 'scrooloose/nerdtree'
 Plug 'ayu-theme/ayu-vim'
 Plug 'dense-analysis/ale'
+Plug 'editorconfig/editorconfig-vim'
 
 " Initialize plugin system
 call plug#end()
