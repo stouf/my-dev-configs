@@ -18,9 +18,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'scrooloose/nerdtree'
-Plug 'ayu-theme/ayu-vim'
 Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'rakr/vim-one'
 
 " Initialize plugin system
 call plug#end()
@@ -28,15 +28,14 @@ call plug#end()
 " Show line numbers
 set number
 
-" Color scheme
-set termguicolors
-let ayucolor="mirage"
-colorscheme ayu
-
 " Enable syntax highlighting
 syntax on
 filetype plugin on
 filetype indent on
+
+" Color scheme
+colorscheme one
+set background=dark
 
 " Line length limiter
 set colorcolumn=80
