@@ -16,7 +16,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf'
-Plug 'reasonml-editor/vim-reason-plus'
 Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
@@ -91,10 +90,6 @@ nnoremap <silent> K ::ALEHover<CR>
 nnoremap <silent> <C-f> :ALEFindReferences<CR>
 nnoremap <silent> gf :ALEFix<CR>
 set omnifunc=ale#completion#OmniFunc
-
-" Ale - Reason (OLS)
-let g:ale_reason_ols_use_global = 1
-let g:ale_reason_ols_executable = "ocaml-language-server"
 
 " FZF
 map <c-p> :FZF<cr>

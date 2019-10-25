@@ -24,9 +24,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Copy the vimrc file
 cp ${DIR}/vimrc ~/.vimrc
 
-# Copy the Language-client configuration file
-cp ${DIR}/language-client-settings.json ${HOME}/.vim/settings.json
-
 cp -r ${DIR}/ftplugin ~/.vim
 
 # Install all the plugins
