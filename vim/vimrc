@@ -90,6 +90,7 @@ nnoremap <silent> K ::ALEHover<CR>
 nnoremap <silent> <C-f> :ALEFindReferences<CR>
 nnoremap <silent> gf :ALEFix<CR>
 set omnifunc=ale#completion#OmniFunc
+let g:ale_fix_on_save = 1
 
 " FZF
 map <c-p> :FZF<cr>
