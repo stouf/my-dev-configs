@@ -19,7 +19,7 @@ Plug 'junegunn/fzf'
 Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'rakr/vim-one'
+Plug 'ayu-theme/ayu-vim'
 
 " Initialize plugin system
 call plug#end()
@@ -48,8 +48,8 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
-set background=dark
-colorscheme one
+let ayucolor="mirage"
+colorscheme ayu
 
 " Line length limiter
 set colorcolumn=80
