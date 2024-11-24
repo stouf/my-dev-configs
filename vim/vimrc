@@ -52,7 +52,7 @@ let ayucolor="mirage"
 colorscheme ayu
 
 " Line length limiter
-set colorcolumn=80
+set colorcolumn=120
 
 " Highlight all search results
 set hlsearch
