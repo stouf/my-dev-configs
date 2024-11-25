@@ -3,4 +3,4 @@
 set -e
 set -u
 
-vim +PlugUpdate +qall
+vim +PlugUpdate +PlugUpgrade +qall
