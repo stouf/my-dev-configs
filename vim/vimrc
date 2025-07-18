@@ -12,13 +12,9 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug 'tpope/vim-commentary'
-Plug 'pangloss/vim-javascript'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
-Plug 'junegunn/fzf'
 Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'ayu-theme/ayu-vim'
 
 " Initialize plugin system
