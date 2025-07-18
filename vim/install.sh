@@ -25,6 +25,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 cp ${DIR}/vimrc ~/.vimrc
 
 cp -r ${DIR}/ftplugin ~/.vim
+cp ./get_color_scheme_light_dark.sh ~/.vim/get_color_scheme_light_dark.sh
 
 # Install all the plugins
 vim +PlugInstall +qall
